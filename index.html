@@ -413,13 +413,21 @@ async function submitSample(e){
     City:document.getElementById('ct').value,
     Source:'apexleadspro — sample request'
   }
+  let submitted = false
   try{
-    await fetch('https://formsubmit.co/ajax/52aa300025cae57e2389feff44bb069b',{
+    const res = await fetch('https://formsubmit.co/ajax/52aa300025cae57e2389feff44bb069b',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(payload)
     })
+    const json = await res.json()
+    if(json.success === 'true' || json.success === true) submitted = true
   }catch(err){}
+  if(!submitted){
+    // Fallback: open mailto
+    const body = encodeURIComponent('Name: '+payload.Name+'\nEmail: '+payload.Email+'\nPhone: '+payload.Phone+'\nVertical: '+payload.Vertical+'\nCity: '+payload.City)
+    window.open('mailto:sophieamoure2026@gmail.com?subject='+encodeURIComponent(payload._subject)+'&body='+body)
+  }
   document.getElementById('sampleForm').style.display='none'
   document.getElementById('successMsg').style.display='block'
 }
