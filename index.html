@@ -144,6 +144,39 @@ footer p{font-size:13px;color:var(--gray-400)}
 footer a{color:var(--gray-400);text-decoration:none}
 footer a:hover{color:var(--blue)}
 
+/* SCORING */
+.score-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:52px;align-items:start}
+.score-left{}
+.score-sources{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.source-row{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-50);border-radius:10px;border:1px solid var(--gray-200)}
+.source-icon{font-size:18px;flex-shrink:0}
+.source-name{font-size:14px;font-weight:600;color:var(--gray-800)}
+.source-desc{font-size:12px;color:var(--gray-600);margin-top:1px}
+.score-right{}
+.score-card{background:var(--gray-900);border-radius:16px;padding:28px;font-family:'JetBrains Mono','Courier New',monospace}
+.score-card-title{font-size:11px;color:#6b7fa3;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.score-field{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.score-field:last-child{border-bottom:none}
+.score-fname{font-size:13px;color:#94a3b8}
+.score-fval{font-size:13px;font-weight:700}
+.sv-green{color:#10b981}
+.sv-blue{color:#5a9bff}
+.sv-amber{color:#f59e0b}
+.score-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);border-radius:8px;padding:8px 14px;margin-top:16px;color:#10b981;font-size:13px;font-weight:700}
+
+/* TRUST */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.trust-card{padding:24px;border:1px solid var(--gray-200);border-radius:14px;background:var(--white)}
+.trust-icon{font-size:28px;margin-bottom:12px}
+.trust-title{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--gray-900)}
+.trust-text{font-size:14px;color:var(--gray-600);line-height:1.65}
+.trust-highlight{background:var(--gray-900);border-radius:16px;padding:32px;margin-top:24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.th-left h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.th-left p{font-size:14px;color:#6b7fa3;line-height:1.6}
+.th-right{text-align:right;flex-shrink:0}
+.th-tag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#10b981;margin-bottom:8px}
+.th-entity{font-size:13px;color:#94a3b8;font-family:'JetBrains Mono','Courier New',monospace}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0 20px}
@@ -218,6 +251,97 @@ footer a:hover{color:var(--blue)}
         <div class="step-num">3</div>
         <h3>Leads Hit Your Inbox</h3>
         <p>Exclusive leads delivered directly to your email within 2 hours of harvest. You get there first — competitors don't see it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD SCORING -->
+<section id="scoring" style="background:var(--gray-50)">
+  <div class="section-inner">
+    <div class="section-label">Methodology</div>
+    <div class="section-title">How Every Lead Is Scored</div>
+    <div class="section-sub">We don't just scrape directories. Our AI engine applies a 6-point scoring model to every contact before it reaches you.</div>
+    <div class="score-grid">
+      <div class="score-left">
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:6px;color:var(--gray-900)">Data Sources — Swept Every 2 Hours</h3>
+        <p style="font-size:14px;color:var(--gray-600);margin-bottom:16px">We pull from 10+ real-time public sources. Not purchased lists. Not aged databases.</p>
+        <div class="score-sources">
+          <div class="source-row"><div class="source-icon">📋</div><div><div class="source-name">Craigslist Services</div><div class="source-desc">Active job requests in "services needed" across all categories</div></div></div>
+          <div class="source-row"><div class="source-icon">🏘️</div><div><div class="source-name">Nextdoor</div><div class="source-desc">Neighbor referral requests — highest intent signal available</div></div></div>
+          <div class="source-row"><div class="source-icon">📱</div><div><div class="source-name">Reddit (Local Subs)</div><div class="source-desc">r/cityname requests for contractors, services, quotes</div></div></div>
+          <div class="source-row"><div class="source-icon">🏪</div><div><div class="source-name">Facebook Marketplace</div><div class="source-desc">"Looking for" posts in home services categories</div></div></div>
+          <div class="source-row"><div class="source-icon">📄</div><div><div class="source-name">Public Permit Filings</div><div class="source-desc">Municipal permit records signal active project demand</div></div></div>
+          <div class="source-row"><div class="source-icon">🔍</div><div><div class="source-name">+ 5 additional sources</div><div class="source-desc">Proprietary to Apex Leads Pro</div></div></div>
+        </div>
+      </div>
+      <div class="score-right">
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;color:var(--gray-900)">Sample Scored Lead — Roofing · San Jose CA</h3>
+        <div class="score-card">
+          <div class="score-card-title">Lead Record · ALP-20260320-4471</div>
+          <div class="score-field"><span class="score-fname">Contact Name</span><span class="score-fval sv-blue">Marcus T.</span></div>
+          <div class="score-field"><span class="score-fname">Phone</span><span class="score-fval sv-green">✓ Verified (408-XXX-XXXX)</span></div>
+          <div class="score-field"><span class="score-fname">Address</span><span class="score-fval sv-green">✓ USPS Confirmed</span></div>
+          <div class="score-field"><span class="score-fname">Source</span><span class="score-fval sv-blue">Nextdoor · San Jose</span></div>
+          <div class="score-field"><span class="score-fname">Posted</span><span class="score-fval sv-green">47 min ago</span></div>
+          <div class="score-field"><span class="score-fname">Intent Signal</span><span class="score-fval sv-amber">"Need quote ASAP, storm damage"</span></div>
+          <div class="score-field"><span class="score-fname">Exclusive Buyer</span><span class="score-fval sv-green">✓ You Only</span></div>
+          <div class="score-field"><span class="score-fname">Dedup Check</span><span class="score-fval sv-green">✓ Not sent to anyone in 90d</span></div>
+          <div class="score-field"><span class="score-fname">Lead Score</span><span class="score-fval sv-green" style="font-size:18px">9.2 / 10</span></div>
+          <div class="score-badge">⚡ Delivered within 2 hours of harvest</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TRUST US -->
+<section id="trust">
+  <div class="section-inner">
+    <div class="section-label">Credibility</div>
+    <div class="section-title">Not Here Today, Gone Tomorrow.</div>
+    <div class="section-sub">We're a registered US entity running AI infrastructure 24/7. Not a one-person Fiverr reseller. Here's who we are.</div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">🏢</div>
+        <div class="trust-title">Backed by Titan Signal, Inc.</div>
+        <div class="trust-text">Apex Leads is operated by Titan Signal — an AI Foundry running 230+ autonomous production systems 24/7. We built the infrastructure ourselves. We're not a middleman.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">📋</div>
+        <div class="trust-title">SAM.gov Registered Entity</div>
+        <div class="trust-text">Pacific Bay Advisors / Titan Signal is a registered US business entity. We're not anonymous. Case on file: INC-GSAFSD20780993. Look us up.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">💳</div>
+        <div class="trust-title">Stripe-Only Payments</div>
+        <div class="trust-text">Every transaction runs through Stripe — you get a receipt, card protection applies, and disputes go through Stripe directly. We never touch your payment info.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">🎯</div>
+        <div class="trust-title">Free Sample Before You Buy</div>
+        <div class="trust-text">Not ready to buy? Request a free sample lead from your city and vertical. See the quality — name, verified phone, address, source URL — before spending a dollar.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-title">Exclusive. One Buyer Per Lead.</div>
+        <div class="trust-text">Unlike Angi or HomeAdvisor, your lead goes to you and nobody else. We enforce 90-day deduplication per buyer — the same lead is never resold to you twice.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">⚙️</div>
+        <div class="trust-title">We Built the Technology</div>
+        <div class="trust-text">Our AI harvesting engine runs on dedicated servers, sweeping 10+ live sources every 2 hours. No manual lookup. No purchased list. Real-time buyer intent, programmatically verified.</div>
+      </div>
+    </div>
+    <div class="trust-highlight">
+      <div class="th-left">
+        <h3>Operated by Titan Signal AI Foundry</h3>
+        <p>230+ autonomous AI systems in live production. The same infrastructure that powers our algorithmic trading fleet, mobile factory, and NeuForge agent platform — now harvesting leads for your business.</p>
+      </div>
+      <div class="th-right">
+        <div class="th-tag">Verified Entity</div>
+        <div class="th-entity">SAM.gov: INC-GSAFSD20780993</div>
+        <a href="https://sophieamoure2026-ui.github.io/titan-signal-brand/" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;background:var(--blue);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">View Titan Signal →</a>
       </div>
     </div>
   </div>
@@ -315,6 +439,62 @@ footer a:hover{color:var(--blue)}
       <div class="zone-right">
         <div class="zone-price">$697<span>/mo</span></div>
         <a href="https://buy.stripe.com/cNi5kF91ZeKOdLd2PPd7q0n" target="_blank" class="btn-white">Lock My Zone →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE BANNER -->
+<section style="background:linear-gradient(135deg,#052e16 0%,#14532d 100%);padding:48px">
+  <div class="section-inner" style="text-align:center">
+    <div style="font-size:40px;margin-bottom:16px">🛡️</div>
+    <h2 style="font-size:clamp(22px,3vw,32px);font-weight:900;color:#fff;margin-bottom:12px">Bad Lead Replacement Guarantee</h2>
+    <p style="font-size:16px;color:#86efac;max-width:620px;margin:0 auto 28px;line-height:1.7">If any lead has a wrong phone number, invalid address, or the person wasn't actively looking for the service — <strong style="color:#fff">email us within 7 days</strong> and we replace it. No questions asked. No hoops to jump through.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 24px;color:#fff;font-size:14px;font-weight:600">✓ Wrong phone? Replaced</div>
+      <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 24px;color:#fff;font-size:14px;font-weight:600">✓ Bad address? Replaced</div>
+      <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 24px;color:#fff;font-size:14px;font-weight:600">✓ No intent? Replaced</div>
+      <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 24px;color:#fff;font-size:14px;font-weight:600">✓ 7-day window, no cost</div>
+    </div>
+    <p style="font-size:13px;color:#6ee7b7;margin-top:20px">Email: <strong style="color:#fff">sophieamoure2026@gmail.com</strong> with your order # and which leads to replace</p>
+  </div>
+</section>
+
+<!-- ALL-IN-ONE SALES KIT -->
+<section style="background:var(--gray-50);padding:80px 48px">
+  <div class="section-inner">
+    <div class="section-label">Premium Bundle</div>
+    <div class="section-title">All-In-One Sales Kit</div>
+    <div class="section-sub">GoHighLevel gives you the CRM. We give you the leads AND the system to close them. No monthly subscription. One purchase — complete pipeline.</div>
+    <div style="background:var(--gray-900);border-radius:20px;padding:48px;margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#5a9bff;margin-bottom:20px">Everything Included</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#1d4ed8;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px">📋</div>
+            <div><div style="font-size:15px;font-weight:700;color:#fff">Domination Lead Pack — 50 Leads</div><div style="font-size:13px;color:#6b7fa3;margin-top:2px">Pre-screened, exclusive, delivered in under 2 hours. 3 replacements included.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px">🤖</div>
+            <div><div style="font-size:15px;font-weight:700;color:#fff">AI Closer Stack — NeuForge Agent</div><div style="font-size:13px;color:#6b7fa3;margin-top:2px">Automated follow-up sequences via SMS + email triggered the moment we deliver each lead.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#059669;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px">📞</div>
+            <div><div style="font-size:15px;font-weight:700;color:#fff">AI Phone Answering — 30 Days</div><div style="font-size:13px;color:#6b7fa3;margin-top:2px">AI agent answers inbound calls 24/7, qualifies the prospect, and books appointments on your calendar.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#d97706;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px">📧</div>
+            <div><div style="font-size:15px;font-weight:700;color:#fff">7-Touch Email Drip Sequence</div><div style="font-size:13px;color:#6b7fa3;margin-top:2px">Proven 7-email sequence pre-loaded for your vertical. Sent automatically over 14 days per lead.</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:13px;color:#6b7fa3;text-decoration:line-through;margin-bottom:4px">Retail Value: $2,994</div>
+        <div style="font-size:clamp(48px,6vw,64px);font-weight:900;color:#fff;line-height:1">$1,997</div>
+        <div style="font-size:14px;color:#86efac;margin-bottom:28px">one-time · no monthly fees</div>
+        <div style="font-size:13px;color:#6b7fa3;margin-bottom:8px">vs. GoHighLevel: $297+/mo with no leads included</div>
+        <a href="mailto:sophieamoure2026@gmail.com?subject=All-In-One Sales Kit Inquiry&body=I'm interested in the All-In-One Sales Kit. My vertical is: [vertical]. My city is: [city]." style="display:inline-block;background:var(--blue);color:#fff;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:800;text-decoration:none;margin-bottom:12px;width:100%">Get the Full Kit →</a>
+        <div style="font-size:12px;color:#4b5563">Fulfillment within 24 hours. Replacement guarantee applies.</div>
       </div>
     </div>
   </div>
