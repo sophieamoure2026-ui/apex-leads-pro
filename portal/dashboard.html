@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Dashboard — Apex Leads Pro</title>
+<link rel="canonical" href="https://apexleads.biz/portal/dashboard.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;line-height:1.6}
+.top{background:#0f172a;color:#fff;padding:16px 32px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:17px;font-weight:800}.logo span{color:#3b6ef5}
+.top-right{font-size:13px;color:#94a3b8}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 24px}
+.excl{background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;border-radius:14px;padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.excl-icon{font-size:32px}
+.excl-t{font-size:15px;font-weight:700}
+.excl-s{font-size:13px;opacity:.85}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:32px}
+.stat{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px}
+.stat-n{font-size:28px;font-weight:900}
+.stat-l{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px}
+h2{font-size:20px;font-weight:800;margin-bottom:4px}
+.sec-sub{font-size:14px;color:#64748b;margin-bottom:16px}
+.lead{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:10px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.lead-name{font-size:15px;font-weight:700}
+.lead-meta{font-size:13px;color:#64748b;margin-top:2px}
+.lead-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px}
+.tag-hot{background:#fee2e2;color:#dc2626}
+.tag-excl{background:#dcfce7;color:#16a34a}
+.tag-ver{background:#dbeafe;color:#1d4ed8}
+.dl{background:#1a4fd8;color:#fff;border:none;padding:11px 20px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;white-space:nowrap}
+.dl:hover{background:#1239a8}
+.dl-all{background:#16a34a;margin-bottom:20px;padding:13px 28px;font-size:14px}
+.dl-all:hover{background:#15803d}
+.buy{background:#fff;border:2px dashed #cbd5e1;border-radius:12px;padding:24px;text-align:center;margin-top:32px}
+.buy-t{font-size:16px;font-weight:800;margin-bottom:6px}
+.buy-s{font-size:14px;color:#64748b;margin-bottom:16px}
+.btn{display:inline-block;background:#1a4fd8;color:#fff;padding:12px 28px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="logo">Apex<span>Leads</span> Pro</div>
+  <div class="top-right">Buyer Portal</div>
+</div>
+<div class="wrap">
+  <div class="excl">
+    <div class="excl-icon">🔒</div>
+    <div><div class="excl-t">100% Exclusive — every lead below is yours alone.</div>
+    <div class="excl-s">One buyer per lead. Never shared, never resold. Ever.</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="stat"><div class="stat-n" id="c-leads">0</div><div class="stat-l">Leads owned</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Exclusive</div></div>
+    <div class="stat"><div class="stat-n" id="c-vert">0</div><div class="stat-l">Verticals</div></div>
+    <div class="stat"><div class="stat-n" id="c-calls">0</div><div class="stat-l">To call</div></div>
+  </div>
+
+  <h2>My Leads</h2>
+  <p class="sec-sub">Newest first. Call within 5 minutes for best close rate.</p>
+  <button class="dl dl-all" onclick="downloadAll()">⬇ Download all as CSV</button>
+  <div id="leads"></div>
+
+  <div class="buy">
+    <div class="buy-t">Need more pipeline?</div>
+    <div class="buy-s">Every new lead is exclusive to you — same guarantee.</div>
+    <a href="https://apexleads.biz/#pricing" class="btn">Buy More Leads →</a>
+  </div>
+</div>
+<script>
+// Demo lead data — same shape as production records
+var LEADS = [
+  {name:"Marcus T.", phone:"(408) 555-0147", addr:"San Jose, CA 95125", vert:"Roofing", age:"47 min ago", intent:"Need quote ASAP, storm damage", hot:true},
+  {name:"Elena R.", phone:"(214) 555-0192", addr:"Dallas, TX 75208", vert:"HVAC", age:"2 hrs ago", intent:"AC out, 2 kids + dog in house", hot:true},
+  {name:"James W.", phone:"(713) 555-0118", addr:"Houston, TX 77057", vert:"Plumbing", age:"5 hrs ago", intent:"Water heater leaking", hot:false},
+];
+function tag(t, cls){ return '<span class="tag '+cls+'">'+t+'</span>'; }
+function render(){
+  var el = document.getElementById('leads');
+  el.innerHTML = LEADS.map(function(l, i){
+    return '<div class="lead"><div><div class="lead-name">'+l.name+' — '+l.vert+'</div>'+
+      '<div class="lead-meta">'+l.phone+' · '+l.addr+' · '+l.age+'</div>'+
+      '<div class="lead-meta">“'+l.intent+'”</div>'+
+      '<div class="lead-tags">'+(l.hot?tag('🔴 HOT','tag-hot'):'')+tag('🔒 EXCLUSIVE','tag-excl')+tag('✓ VERIFIED','tag-ver')+'</div>'+
+      '</div><button class="dl" onclick="downloadOne('+i+')">⬇ CSV</button></div>';
+  }).join('');
+  document.getElementById('c-leads').textContent = LEADS.length;
+  document.getElementById('c-vert').textContent = new Set(LEADS.map(l=>l.vert)).size;
+  document.getElementById('c-calls').textContent = LEADS.length;
+}
+function csv(rows){
+  var h = 'Name,Phone,Address,Vertical,Lead Age,Intent,Exclusive\n';
+  return h + rows.map(l=>[l.name,l.phone,l.addr,l.vert,l.age,'"'+l.intent+'"','YES'].join(',')).join('\n');
+}
+function dl(filename, text){
+  var b = new Blob([text], {type:'text/csv'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(b); a.download = filename; a.click();
+}
+function downloadAll(){ dl('apex-leads-all.csv', csv(LEADS)); }
+function downloadOne(i){ dl('apex-lead-'+(i+1)+'.csv', csv([LEADS[i]])); }
+render();
+</script>
+</body>
+</html>

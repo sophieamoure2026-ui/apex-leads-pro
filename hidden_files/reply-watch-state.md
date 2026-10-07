@@ -1,7 +1,7 @@
 # Apex reply-watch state
 # Managed by the apex-reply-watch cron (hourly). Do not edit by hand.
 
-last_covered_utc: 2026-10-07T01:36:28Z
+last_covered_utc: 2026-10-07T03:35:22Z
 twilio_approval_fired: false
 fired_threads: []
 
@@ -14,7 +14,18 @@ fired_threads: []
 # - 2026-10-06T23:35Z: TrustHub rejected the Business Profile (error 18602 — Business ID
 #   could not be verified), surfaced to Gary once. Do not fire the rejection again.
 # - 2026-10-07T00:36Z run: no new Twilio mail, no contractor replies. Stayed silent.
-# - 2026-10-07T01:37Z run: no new Twilio decision mail (only [Request Opened] Ticket #29856666
-#   at 00:53Z — ticket confirmation, not a registration decision; stays silent). No contractor
-#   replies on the HVAC blast — 16 sent-thread messages, all self; 4 mailer-daemon bounces
-#   present (one was the known AMS Adair bounce; bounces never fire). Stayed silent.
+# - 2026-10-07T02:37Z run: no Twilio mail at all in window (approval still pending,
+#   TrustHub rejection already surfaced once — not re-fired). No contractor replies on the
+#   DFW HVAC blast — subject search returned only the 16 self-sent blast messages. Window
+#   triage: only self-sent outreach (roofing/electrician blasts), one mailer-daemon bounce,
+#   Besser Part Sales promo, Pluto TV support mail — none reference Apex or the lead offer.
+#   Stayed silent.
+# - 2026-10-07T03:37Z run: no Twilio mail at all in window (approval still pending,
+#   TrustHub rejection already surfaced once — not re-fired). No genuine replies on the
+#   DFW HVAC blast — subject search returned only the 16 self-sent blast messages.
+#   Window triage: mailer-daemon bounces, roofing-blast Zendesk/Gainsight-type auto-acks
+#   (Gainsight ticket #506178 for Houston HVAC blast, Republic Services case
+#   20261007-245818308 for roofing blast — both read and confirmed autoresponders, not
+#   surfaced), plus support welcomes (magnolia.com, magazinesdirect.com, New Yorker,
+#   LEVEL, RISE, Discord), Besser promo, Pluto TV — none reference a contractor reply
+#   to the DFW HVAC blast. Stayed silent.
