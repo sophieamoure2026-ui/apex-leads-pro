@@ -1,7 +1,7 @@
 # Apex reply-watch state
 # Managed by the apex-reply-watch cron (hourly). Do not edit by hand.
 
-last_covered_utc: 2026-10-07T03:35:22Z
+last_covered_utc: 2026-10-07T04:35:10Z
 twilio_approval_fired: false
 fired_threads: []
 
@@ -20,12 +20,9 @@ fired_threads: []
 #   triage: only self-sent outreach (roofing/electrician blasts), one mailer-daemon bounce,
 #   Besser Part Sales promo, Pluto TV support mail — none reference Apex or the lead offer.
 #   Stayed silent.
-# - 2026-10-07T03:37Z run: no Twilio mail at all in window (approval still pending,
+# - 2026-10-07T04:37Z run: no Twilio mail at all in window (approval still pending,
 #   TrustHub rejection already surfaced once — not re-fired). No genuine replies on the
-#   DFW HVAC blast — subject search returned only the 16 self-sent blast messages.
-#   Window triage: mailer-daemon bounces, roofing-blast Zendesk/Gainsight-type auto-acks
-#   (Gainsight ticket #506178 for Houston HVAC blast, Republic Services case
-#   20261007-245818308 for roofing blast — both read and confirmed autoresponders, not
-#   surfaced), plus support welcomes (magnolia.com, magazinesdirect.com, New Yorker,
-#   LEVEL, RISE, Discord), Besser promo, Pluto TV — none reference a contractor reply
-#   to the DFW HVAC blast. Stayed silent.
+#   DFW HVAC blast — subject search returned only self-sent blast messages. Window
+#   triage: roofing-blast Republic Services case ack, magnolia/magazinesdirect/RISE
+#   support thank-yous, Gainsight ticket #506178 (Houston HVAC autoresponder, already
+#   confirmed) — none reference a contractor reply to the DFW HVAC blast. Stayed silent.
